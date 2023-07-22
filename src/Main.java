@@ -5,17 +5,12 @@ public class Main {
         System.out.println(repsEqual(a,1345));
     }
     static int  repsEqual(int[ ] a, int n){
-       int repsEqual=0;
-       for (int lastIndex=a.length-1;lastIndex>=0;lastIndex--){
-           int lastDigit=n%10;
-           n/=10;
-           if (a[lastIndex]==lastDigit){
-               repsEqual=1;
-           }
-           else repsEqual=0;
-
-       }
-       return repsEqual;
+ int i,j,sum=0,repsEqual=0;
+ for (i=a.length-1,j=0;i>=0;i--){
+     sum+=Math.pow(10,j++)*a[i];
+ }
+ if (sum==n)repsEqual=1;
+return repsEqual;
     }
 
 }
